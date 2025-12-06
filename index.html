@@ -1,0 +1,75 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Quote Keeper — Minimal & Accessible</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="quote-app" id="quoteApp" aria-labelledby="appTitle">
+<header class="qa__header">
+<h1 id="appTitle">Quote Keeper</h1>
+<p class="qa__tag">Save, edit, copy and manage your favorite quotes locally.</p>
+</header>
+
+
+<nav class="qa__nav" role="navigation" aria-label="Main">
+<button id="tabAdd" class="qa__tab qa__tab--active">Add Quote</button>
+<button id="tabList" class="qa__tab">My Quotes</button>
+</nav>
+
+
+<section id="paneAdd" class="qa__pane">
+<label class="qa__label">Author</label>
+<input id="inputAuthor" class="qa__input" placeholder="Author name (optional)" aria-label="Author name">
+
+
+<label class="qa__label">Quote</label>
+<textarea id="inputQuote" class="qa__textarea" rows="4" placeholder="Type the quote..." aria-label="Quote text"></textarea>
+
+
+<div class="qa__actions">
+<button id="btnSave" class="qa__btn qa__btn--primary">Save Quote</button>
+<button id="btnClearForm" class="qa__btn qa__btn--ghost">Clear</button>
+</div>
+</section>
+
+
+<section id="paneList" class="qa__pane qa__pane--hidden" aria-live="polite">
+<div class="qa__list-header">
+<h2 class="qa__h2">Saved Quotes</h2>
+<div>
+<button id="btnDeleteAll" class="qa__btn qa__btn--danger">Delete All</button>
+<button id="btnExport" class="qa__btn qa__btn--ghost">Export</button>
+</div>
+</div>
+
+
+<ul id="quoteList" class="qa__list" aria-label="Saved quotes list"></ul>
+
+
+<p id="emptyHint" class="qa__hint">No quotes yet — create your first one.</p>
+</section>
+
+
+<!-- Toast area for unobtrusive feedback -->
+<div id="toast" class="qa__toast" role="status" aria-live="polite"></div>
+
+
+<!-- Edit modal (simple) -->
+<div id="editModal" class="qa__modal qa__modal--hidden" role="dialog" aria-modal="true" aria-labelledby="editTitle">
+<div class="qa__modal-inner">
+<h3 id="editTitle">Edit Quote</h3>
+<textarea id="editTextarea" class="qa__textarea" rows="4"></textarea>
+<div class="qa__actions">
+<button id="btnSaveEdit" class="qa__btn qa__btn--primary">Save</button>
+<button id="btnCancelEdit" class="qa__btn qa__btn--ghost">Cancel</button>
+</div>
+</div>
+</div>
+
+
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>
